@@ -106,9 +106,9 @@ func TestInstallCommand(t *testing.T) {
 			want:    [][]string{{"sudo", "npm", "install", "-g", "opencode-ai"}},
 		},
 		{
-			name:    "arch resolves pacman command",
+			name:    "arch resolves npm install",
 			profile: system.PlatformProfile{OS: "linux", LinuxDistro: system.LinuxDistroArch, PackageManager: "pacman"},
-			want:    [][]string{{"sudo", "pacman", "-S", "--noconfirm", "opencode"}},
+			want:    [][]string{{"sudo", "npm", "install", "-g", "opencode-ai"}},
 		},
 		{
 			name:    "unsupported package manager errors",

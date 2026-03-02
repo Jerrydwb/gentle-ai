@@ -23,9 +23,9 @@ The installer detects the platform automatically at runtime — there is no flag
 
 | Platform | Package manager | Example install command |
 |---|---|---|
-| macOS | `brew` | `brew install opencode` |
-| Ubuntu/Debian | `apt` | `sudo apt-get install -y opencode` |
-| Arch | `pacman` | `sudo pacman -S --noconfirm opencode` |
+| macOS | `brew` | `brew install anomalyco/tap/opencode` |
+| Ubuntu/Debian | `apt` | `sudo npm install -g opencode-ai` |
+| Arch | `pacman` | `sudo npm install -g opencode-ai` |
 
 The `--dry-run` output includes a `Platform decision` line showing `os`, `distro`, `package-manager`, and `status`.
 

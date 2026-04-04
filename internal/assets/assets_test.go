@@ -33,6 +33,19 @@ func TestAllEmbeddedAssetsAreReadable(t *testing.T) {
 		// Gemini agent files
 		"gemini/sdd-orchestrator.md",
 
+		// Qwen Code agent files
+		"qwen/sdd-orchestrator.md",
+		"qwen/agents/sdd-init.md",
+		"qwen/agents/sdd-explore.md",
+		"qwen/agents/sdd-propose.md",
+		"qwen/agents/sdd-spec.md",
+		"qwen/agents/sdd-design.md",
+		"qwen/agents/sdd-tasks.md",
+		"qwen/agents/sdd-apply.md",
+		"qwen/agents/sdd-verify.md",
+		"qwen/agents/sdd-archive.md",
+		"qwen/agents/sdd-onboard.md",
+
 		// Codex agent files
 		"codex/sdd-orchestrator.md",
 

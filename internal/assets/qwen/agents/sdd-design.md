@@ -22,11 +22,14 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read proposal artifact (required): `mcp__engram__mem_search("sdd/{change-name}/proposal")` → `mcp__engram__mem_get_observation`
-2. Define module/component structure and responsibilities
-3. Specify data model changes with field-level detail
-4. Draw key sequence flows (abbreviated text diagrams are fine)
-5. Document key design decisions with rationale
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/proposal")` → `mcp__engram__mem_get_observation`.
+   - **openspec**: `read_file` on `.atl/openspec/changes/{change-name}/proposal.md`. List `.atl/openspec/changes/` if unsure of paths.
+2. Read proposal artifact (required) using the method above.
+3. Define module/component structure and responsibilities.
+4. Specify data model changes with field-level detail.
+5. Draw key sequence flows (abbreviated text diagrams are fine).
+6. Document key design decisions with rationale.
 
 ## Engram Save (mandatory)
 

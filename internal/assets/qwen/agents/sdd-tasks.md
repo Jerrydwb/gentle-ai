@@ -22,11 +22,14 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read spec artifact (required): `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`
-2. Read design artifact (required): `mcp__engram__mem_search("sdd/{change-name}/design")` → `mcp__engram__mem_get_observation`
-3. Break work into atomic tasks (each ~1–2 hours max)
-4. Order by dependency (earlier tasks must not depend on later ones)
-5. Tag each task: file path, type (create/modify/delete/test), phase (RED/GREEN/REFACTOR if TDD)
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`; same for design.
+   - **openspec**: `read_file` on `.atl/openspec/changes/{change-name}/spec.md` and `design.md`. List `.atl/openspec/changes/` if unsure of paths.
+2. Read spec artifact (required) using the method above.
+3. Read design artifact (required) using the method above.
+4. Break work into atomic tasks (each ~1–2 hours max).
+5. Order by dependency (earlier tasks must not depend on later ones).
+6. Tag each task: file path, type (create/modify/delete/test), phase (RED/GREEN/REFACTOR if TDD).
 
 ## Engram Save (mandatory)
 

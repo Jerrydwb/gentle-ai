@@ -22,10 +22,13 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read proposal artifact (required): `mcp__engram__mem_search("sdd/{change-name}/proposal")` → `mcp__engram__mem_get_observation`
-2. Write acceptance criteria in Given/When/Then format
-3. Define interface contracts (API shape, data model changes, events)
-4. List out-of-scope items explicitly
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/proposal")` → `mcp__engram__mem_get_observation`.
+   - **openspec**: `read_file` on `.atl/openspec/changes/{change-name}/proposal.md`. List `.atl/openspec/changes/` if unsure of paths.
+2. Read proposal artifact (required) using the method above.
+3. Write acceptance criteria in Given/When/Then format.
+4. Define interface contracts (API shape, data model changes, events).
+5. List out-of-scope items explicitly.
 
 ## Engram Save (mandatory)
 

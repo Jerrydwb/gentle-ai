@@ -22,10 +22,13 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read all existing artifacts for the change (proposal, spec, design, tasks, apply-progress, verify-report)
-2. Write a concise archive report summarizing what was built and why
-3. Mark the change as `archived` in the persistence backend
-4. Clean up any temporary in-progress markers
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: use `mcp__engram__mem_search` → `mcp__engram__mem_get_observation` for each artifact (proposal, spec, design, tasks, apply-progress, verify-report).
+   - **openspec**: `read_file` on each `.atl/openspec/changes/{change-name}/*.md` file. List the directory first.
+2. Read all existing artifacts for the change using the method above.
+3. Write a concise archive report summarizing what was built and why.
+4. Mark the change as `archived` in the persistence backend.
+5. Clean up any temporary in-progress markers.
 
 ## Engram Save (mandatory)
 

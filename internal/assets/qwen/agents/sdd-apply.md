@@ -23,14 +23,18 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read tasks artifact (required): `mcp__engram__mem_search("sdd/{change-name}/tasks")` → `mcp__engram__mem_get_observation`
-2. Read spec artifact (required): `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`
-3. Read design artifact (required): `mcp__engram__mem_search("sdd/{change-name}/design")` → `mcp__engram__mem_get_observation`
-4. Detect TDD mode from config or existing test patterns
-5. Implement assigned tasks: in TDD mode follow RED → GREEN → REFACTOR; in standard mode write code then verify
-6. Match existing code patterns and conventions
-7. Mark each task `[x]` complete as you finish it
-8. Persist progress to active backend
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/tasks")` → `mcp__engram__mem_get_observation`; same for spec and design.
+   - **openspec**: read files directly — `read_file` on `.atl/openspec/changes/{change-name}/tasks.md`, `spec.md`, `design.md`. If unsure of paths, list `.atl/openspec/changes/` first.
+2. Read tasks artifact (required) using the method above.
+3. Read spec artifact (required) using the method above.
+4. Read design artifact (required) using the method above.
+5. Detect TDD mode from config or existing test patterns.
+6. Implement assigned tasks: in TDD mode follow RED → GREEN → REFACTOR; in standard mode write code then verify.
+   - **Max retries per task**: if tests still fail after 3 fix attempts, mark the task as `[!] blocked`, document the error, and move on. Do NOT loop indefinitely.
+7. Match existing code patterns and conventions.
+8. Mark each task `[x]` complete as you finish it.
+9. Persist progress to active backend.
 
 ## Engram Save (mandatory)
 

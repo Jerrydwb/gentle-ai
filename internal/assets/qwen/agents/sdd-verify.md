@@ -23,14 +23,17 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read spec artifact (required): `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`
-2. Read tasks artifact (required): `mcp__engram__mem_search("sdd/{change-name}/tasks")` → `mcp__engram__mem_get_observation`
-3. Read design artifact: `mcp__engram__mem_search("sdd/{change-name}/design")` → `mcp__engram__mem_get_observation`
-4. Check completeness: all tasks done?
-5. Run tests (detect runner from config, package.json, Makefile, etc.)
-6. Run build/type check
-7. Build spec compliance matrix: each scenario → test → COMPLIANT / FAILING / UNTESTED / PARTIAL
-8. Report verdict: PASS / PASS WITH WARNINGS / FAIL
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`; same for tasks and design.
+   - **openspec**: `read_file` on `.atl/openspec/changes/{change-name}/spec.md`, `tasks.md`, `design.md`. List `.atl/openspec/changes/` if unsure of paths.
+2. Read spec artifact (required) using the method above.
+3. Read tasks artifact (required) using the method above.
+4. Read design artifact (optional) using the method above.
+5. Check completeness: all tasks done?
+6. Run tests (detect runner from config, package.json, Makefile, etc.)
+7. Run build/type check
+8. Build spec compliance matrix: each scenario → test → COMPLIANT / FAILING / UNTESTED / PARTIAL
+9. Report verdict: PASS / PASS WITH WARNINGS / FAIL
 
 Do NOT create or modify project files — your job is verification only, not implementation.
 Do NOT fix any issues found — only report them. The orchestrator decides what to do next.

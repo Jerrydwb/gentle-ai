@@ -22,10 +22,13 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read exploration artifact (if available): `mcp__engram__mem_search("sdd/{change-name}/explore")` → `mcp__engram__mem_get_observation`
-2. Propose a clear architectural solution with rationale
-3. List components affected, risks, open questions
-4. Include a recommendation for the approach
+1. Determine artifact store mode from the invocation message (`engram`, `openspec`, or `hybrid`).
+   - **engram / hybrid**: `mcp__engram__mem_search("sdd/{change-name}/explore")` → `mcp__engram__mem_get_observation` (optional — skip if not found).
+   - **openspec**: `read_file` on `.atl/openspec/changes/{change-name}/explore.md` if it exists (optional).
+2. Read exploration artifact (if available) using the method above.
+3. Propose a clear architectural solution with rationale.
+4. List components affected, risks, open questions.
+5. Include a recommendation for the approach.
 
 ## Engram Save (mandatory)
 

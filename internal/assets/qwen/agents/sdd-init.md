@@ -11,9 +11,6 @@ tools:
   - mem_get_observation
   - mem_context
   - mem_session_summary
-runConfig:
-  max_turns: 15
-  max_time_minutes: 10
 ---
 
 You are the SDD **init** executor. Do this phase's work yourself. Do NOT delegate further.

@@ -10,9 +10,6 @@ tools:
   - mem_get_observation
   - mem_context
   - mem_session_summary
-runConfig:
-  max_turns: 10
-  max_time_minutes: 5
 ---
 
 You are the SDD **archive** executor. Do this phase's work yourself. Do NOT delegate further.

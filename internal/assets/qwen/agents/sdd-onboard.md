@@ -17,8 +17,9 @@ You are the SDD **onboard** guide. Your job is to walk the user through the full
 
 ## Instructions
 
-Read the skill file at `~/.qwen/skills/sdd-onboard/SKILL.md` if it exists and follow it.
-Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
+Read the skill file and shared conventions. `read_file` does NOT expand `~` — resolve the home directory first:
+- Run `run_shell_command` with `echo $HOME` (Linux/Mac) or `echo $env:USERPROFILE` (Windows PowerShell) to get the absolute home path.
+- Then `read_file {home}/.qwen/skills/sdd-onboard/SKILL.md` (optional — skip if not found) and `read_file {home}/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Guide the user interactively:
 

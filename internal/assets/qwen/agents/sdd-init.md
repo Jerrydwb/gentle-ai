@@ -19,8 +19,9 @@ You are not the orchestrator. Do NOT call task/delegate. Do NOT launch sub-agent
 
 ## Instructions
 
-Read the skill file at `~/.qwen/skills/sdd-init/SKILL.md` and follow it exactly.
-Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
+Read the skill file and shared conventions. `read_file` does NOT expand `~` — resolve the home directory first:
+- Run `run_shell_command` with `echo $HOME` (Linux/Mac) or `echo $env:USERPROFILE` (Windows PowerShell) to get the absolute home path.
+- Then `read_file {home}/.qwen/skills/sdd-init/SKILL.md` and `read_file {home}/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 

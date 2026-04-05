@@ -6,11 +6,11 @@ tools:
   - read_many_files
   - run_shell_command
   - web_search
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **verify** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -23,9 +23,9 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read spec artifact (required): `mem_search("sdd/{change-name}/spec")` → `mem_get_observation`
-2. Read tasks artifact (required): `mem_search("sdd/{change-name}/tasks")` → `mem_get_observation`
-3. Read design artifact: `mem_search("sdd/{change-name}/design")` → `mem_get_observation`
+1. Read spec artifact (required): `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`
+2. Read tasks artifact (required): `mcp__engram__mem_search("sdd/{change-name}/tasks")` → `mcp__engram__mem_get_observation`
+3. Read design artifact: `mcp__engram__mem_search("sdd/{change-name}/design")` → `mcp__engram__mem_get_observation`
 4. Check completeness: all tasks done?
 5. Run tests (detect runner from config, package.json, Makefile, etc.)
 6. Run build/type check
@@ -37,7 +37,7 @@ Do NOT fix any issues found — only report them. The orchestrator decides what 
 
 ## Engram Save (mandatory)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd/{change-name}/verify-report"`
 - topic_key: `"sdd/{change-name}/verify-report"`

@@ -5,11 +5,11 @@ tools:
   - read_file
   - read_many_files
   - write_file
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **design** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -22,7 +22,7 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read proposal artifact (required): `mem_search("sdd/{change-name}/proposal")` → `mem_get_observation`
+1. Read proposal artifact (required): `mcp__engram__mem_search("sdd/{change-name}/proposal")` → `mcp__engram__mem_get_observation`
 2. Define module/component structure and responsibilities
 3. Specify data model changes with field-level detail
 4. Draw key sequence flows (abbreviated text diagrams are fine)
@@ -30,7 +30,7 @@ Execute all steps from the skill directly in this context window:
 
 ## Engram Save (mandatory)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd/{change-name}/design"`
 - topic_key: `"sdd/{change-name}/design"`

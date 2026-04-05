@@ -6,11 +6,11 @@ tools:
   - write_file
   - read_many_files
   - run_shell_command
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **apply** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -23,9 +23,9 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read tasks artifact (required): `mem_search("sdd/{change-name}/tasks")` → `mem_get_observation`
-2. Read spec artifact (required): `mem_search("sdd/{change-name}/spec")` → `mem_get_observation`
-3. Read design artifact (required): `mem_search("sdd/{change-name}/design")` → `mem_get_observation`
+1. Read tasks artifact (required): `mcp__engram__mem_search("sdd/{change-name}/tasks")` → `mcp__engram__mem_get_observation`
+2. Read spec artifact (required): `mcp__engram__mem_search("sdd/{change-name}/spec")` → `mcp__engram__mem_get_observation`
+3. Read design artifact (required): `mcp__engram__mem_search("sdd/{change-name}/design")` → `mcp__engram__mem_get_observation`
 4. Detect TDD mode from config or existing test patterns
 5. Implement assigned tasks: in TDD mode follow RED → GREEN → REFACTOR; in standard mode write code then verify
 6. Match existing code patterns and conventions
@@ -34,7 +34,7 @@ Execute all steps from the skill directly in this context window:
 
 ## Engram Save (mandatory)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd/{change-name}/apply-progress"`
 - topic_key: `"sdd/{change-name}/apply-progress"`

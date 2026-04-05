@@ -6,11 +6,11 @@ tools:
   - read_many_files
   - write_file
   - run_shell_command
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **onboard** guide. Your job is to walk the user through the full SDD workflow using their real codebase — from init through archive — so they understand every phase and how they connect.

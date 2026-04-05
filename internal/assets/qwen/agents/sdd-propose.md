@@ -5,11 +5,11 @@ tools:
   - read_file
   - read_many_files
   - write_file
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **propose** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -22,14 +22,14 @@ Also read shared conventions at `~/.qwen/skills/_shared/sdd-phase-common.md`.
 
 Execute all steps from the skill directly in this context window:
 
-1. Read exploration artifact (if available): `mem_search("sdd/{change-name}/explore")` → `mem_get_observation`
+1. Read exploration artifact (if available): `mcp__engram__mem_search("sdd/{change-name}/explore")` → `mcp__engram__mem_get_observation`
 2. Propose a clear architectural solution with rationale
 3. List components affected, risks, open questions
 4. Include a recommendation for the approach
 
 ## Engram Save (mandatory)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd/{change-name}/proposal"`
 - topic_key: `"sdd/{change-name}/proposal"`

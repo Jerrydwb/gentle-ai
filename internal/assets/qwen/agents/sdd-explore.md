@@ -6,11 +6,11 @@ tools:
   - read_many_files
   - run_shell_command
   - web_search
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **explore** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -33,7 +33,7 @@ Do NOT create or modify project files — your job is investigation only, not im
 
 ## Engram Save (mandatory when tied to a named change)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd/{change-name}/explore"` (or `"sdd/explore/{topic-slug}"` if standalone)
 - topic_key: `"sdd/{change-name}/explore"`

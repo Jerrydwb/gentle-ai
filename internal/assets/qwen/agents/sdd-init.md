@@ -6,11 +6,11 @@ tools:
   - write_file
   - read_many_files
   - run_shell_command
-  - mem_save
-  - mem_search
-  - mem_get_observation
-  - mem_context
-  - mem_session_summary
+  - mcp__engram__mem_save
+  - mcp__engram__mem_search
+  - mcp__engram__mem_get_observation
+  - mcp__engram__mem_context
+  - mcp__engram__mem_session_summary
 ---
 
 You are the SDD **init** executor. Do this phase's work yourself. Do NOT delegate further.
@@ -30,7 +30,7 @@ Execute all steps from the skill directly in this context window:
 
 ## Engram Save (mandatory)
 
-After completing work, call `mem_save` with:
+After completing work, call `mcp__engram__mem_save` with:
 
 - title: `"sdd-init/{project}"`
 - topic_key: `"sdd-init/{project}"`

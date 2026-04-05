@@ -3,6 +3,8 @@ description: Validate implementation against specs — reports CRITICAL / WARNIN
 ---
 
 
+Working directory: !{pwd}
+
 TASK:
 Verify the active SDD change. Read the proposal, specs, design, and tasks artifacts. Then:
 

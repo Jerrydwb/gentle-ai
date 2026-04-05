@@ -5,6 +5,8 @@ description: Explore and investigate an idea or feature — reads codebase and c
 
 Topic to explore: {{args}}
 
+Working directory: !{pwd}
+
 TASK:
 Explore the topic "{{args}}" in this codebase. Investigate the current state, identify affected areas, compare approaches, and provide a recommendation.
 

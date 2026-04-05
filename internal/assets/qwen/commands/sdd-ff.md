@@ -4,6 +4,8 @@ description: Fast-forward all SDD planning phases — proposal through tasks
 
 Follow the SDD orchestrator workflow to fast-forward all planning phases for change "{{args}}".
 
+Working directory: !{pwd}
+
 WORKFLOW:
 Run these sub-agents in sequence:
 

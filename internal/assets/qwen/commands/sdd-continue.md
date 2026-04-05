@@ -4,6 +4,8 @@ description: Continue the next SDD phase in the dependency chain
 
 Follow the SDD orchestrator workflow to continue the active change.
 
+Working directory: !{pwd}
+
 WORKFLOW:
 
 1. Check which artifacts already exist for the active change (proposal, specs, design, tasks)

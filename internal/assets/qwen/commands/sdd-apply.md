@@ -5,6 +5,8 @@ description: Implement SDD tasks — writes code following specs and design
 
 The sdd-apply skill (v2.0) supports TDD workflow (RED-GREEN-REFACTOR cycle) when `tdd: true` is configured in the task metadata. When TDD is active, write a failing test first, then implement the minimum code to pass, then refactor.
 
+Working directory: !{pwd}
+
 TASK:
 Implement the remaining incomplete tasks for the active SDD change.
 

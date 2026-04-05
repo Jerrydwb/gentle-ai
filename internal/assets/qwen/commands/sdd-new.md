@@ -4,6 +4,8 @@ description: Start a new SDD change — runs exploration then creates a proposal
 
 Follow the SDD orchestrator workflow for starting a new change named "{{args}}".
 
+Working directory: !{pwd}
+
 WORKFLOW:
 
 1. Launch sdd-explore sub-agent to investigate the codebase for this change

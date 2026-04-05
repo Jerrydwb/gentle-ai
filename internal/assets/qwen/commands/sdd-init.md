@@ -3,6 +3,8 @@ description: Initialize SDD context — detects project stack and bootstraps per
 ---
 
 
+Working directory: !{pwd}
+
 TASK:
 Initialize Spec-Driven Development in this project. Detect the tech stack, existing conventions, and architecture patterns. Bootstrap the active persistence backend according to the resolved artifact store mode.
 

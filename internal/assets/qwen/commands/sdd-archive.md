@@ -3,6 +3,8 @@ description: Archive a completed SDD change — syncs specs and closes the cycle
 ---
 
 
+Working directory: !{pwd}
+
 TASK:
 Archive the active SDD change. Read the verification report first to confirm the change is ready. Then:
 

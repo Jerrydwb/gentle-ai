@@ -3,12 +3,7 @@ description: Explore and investigate an idea or feature — reads codebase and c
 ---
 
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Topic to explore: {{args}}
-- Artifact store mode: engram
+Topic to explore: {{args}}
 
 TASK:
 Explore the topic "{{args}}" in this codebase. Investigate the current state, identify affected areas, compare approaches, and provide a recommendation.

@@ -14,12 +14,7 @@ Run these sub-agents in sequence:
 
 Present a combined summary after ALL phases complete (not between each one).
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Change name: {{args}}
-- Artifact store mode: engram
+Change name: {{args}}
 
 ENGRAM NOTE:
 Sub-agents handle persistence automatically. Each phase saves its artifact to engram with topic_key "sdd/{{args}}/{type}" where type is: proposal, spec, design, tasks.

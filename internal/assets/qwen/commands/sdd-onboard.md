@@ -3,12 +3,6 @@ description: Guided end-to-end walkthrough of SDD using your real codebase
 ---
 
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Artifact store mode: engram
-
 TASK:
 Guide the user through a complete SDD cycle using their actual codebase. This is a real change with real artifacts, not a toy example. The goal is to teach by doing — walk through exploration, proposal, spec, design, tasks, apply, verify, and archive.
 

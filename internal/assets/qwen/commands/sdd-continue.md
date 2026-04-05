@@ -12,12 +12,7 @@ WORKFLOW:
 3. Launch the appropriate sub-agent(s) for the next phase
 4. Present the result and ask the user to proceed
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Change name: {{args}}
-- Artifact store mode: engram
+Change name: {{args}}
 
 ENGRAM NOTE:
 To check which artifacts exist, search: mem_search(query: "sdd/{{args}}/", project: "{project}") to list all artifacts for this change.

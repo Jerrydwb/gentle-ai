@@ -11,12 +11,7 @@ WORKFLOW:
 3. Launch sdd-propose sub-agent to create a proposal based on the exploration
 4. Present the proposal summary and ask the user if they want to continue with specs and design
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Change name: {{args}}
-- Artifact store mode: engram
+Change name: {{args}}
 
 ENGRAM NOTE:
 Sub-agents handle persistence automatically. Each phase saves its artifact to engram with topic_key "sdd/{{args}}/{type}".

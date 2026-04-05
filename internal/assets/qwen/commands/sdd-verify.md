@@ -3,12 +3,6 @@ description: Validate implementation against specs — reports CRITICAL / WARNIN
 ---
 
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Artifact store mode: engram
-
 TASK:
 Verify the active SDD change. Read the proposal, specs, design, and tasks artifacts. Then:
 

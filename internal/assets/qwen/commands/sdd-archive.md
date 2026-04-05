@@ -3,12 +3,6 @@ description: Archive a completed SDD change — syncs specs and closes the cycle
 ---
 
 
-CONTEXT:
-
-- Working directory: !{pwd}
-- Current project: (last component of the working directory path)
-- Artifact store mode: engram
-
 TASK:
 Archive the active SDD change. Read the verification report first to confirm the change is ready. Then:
 

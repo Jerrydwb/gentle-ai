@@ -17,7 +17,7 @@ Present a combined summary after ALL phases complete (not between each one).
 CONTEXT:
 
 - Working directory: !{pwd}
-- Current project: !{basename $(pwd)}
+- Current project: (last component of the working directory path)
 - Change name: {{args}}
 - Artifact store mode: engram
 

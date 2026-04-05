@@ -9,7 +9,7 @@ The sdd-apply skill (v2.0) supports TDD workflow (RED-GREEN-REFACTOR cycle) when
 CONTEXT:
 
 - Working directory: !{pwd}
-- Current project: !{basename $(pwd)}
+- Current project: (last component of the working directory path)
 - Artifact store mode: engram
 
 TASK:

@@ -15,7 +15,7 @@ WORKFLOW:
 CONTEXT:
 
 - Working directory: !{pwd}
-- Current project: !{basename $(pwd)}
+- Current project: (last component of the working directory path)
 - Change name: {{args}}
 - Artifact store mode: engram
 

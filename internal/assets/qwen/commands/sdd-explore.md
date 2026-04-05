@@ -7,7 +7,7 @@ You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-explore/SKIL
 CONTEXT:
 
 - Working directory: !{pwd}
-- Current project: !{basename $(pwd)}
+- Current project: (last component of the working directory path)
 - Topic to explore: {{args}}
 - Artifact store mode: engram
 

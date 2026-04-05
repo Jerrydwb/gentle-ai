@@ -2,7 +2,6 @@
 description: Archive a completed SDD change — syncs specs and closes the cycle
 ---
 
-You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-archive/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
 

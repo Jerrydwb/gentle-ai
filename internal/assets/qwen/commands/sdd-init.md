@@ -2,7 +2,6 @@
 description: Initialize SDD context — detects project stack and bootstraps persistence backend
 ---
 
-You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-init/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
 

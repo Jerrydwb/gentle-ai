@@ -2,7 +2,6 @@
 description: Explore and investigate an idea or feature — reads codebase and compares approaches
 ---
 
-You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-explore/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
 

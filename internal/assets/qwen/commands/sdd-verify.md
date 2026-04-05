@@ -2,7 +2,6 @@
 description: Validate implementation against specs — reports CRITICAL / WARNING / SUGGESTION
 ---
 
-You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-verify/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
 

@@ -2,7 +2,6 @@
 description: Guided end-to-end walkthrough of SDD using your real codebase
 ---
 
-You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-onboard/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
 

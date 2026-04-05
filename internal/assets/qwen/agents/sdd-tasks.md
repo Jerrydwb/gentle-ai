@@ -3,8 +3,9 @@ name: sdd-tasks
 description: Break down a change into concrete implementation tasks. Use after spec and design artifacts exist to produce an ordered, dependency-aware task list ready for execution. use PROACTIVELY when the user asks to break down work into tasks.
 tools:
   - read_file
-  - read_many_files
   - write_file
+  - edit
+  - read_many_files
   - mcp__engram__mem_save
   - mcp__engram__mem_search
   - mcp__engram__mem_get_observation

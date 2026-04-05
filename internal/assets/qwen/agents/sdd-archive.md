@@ -3,8 +3,9 @@ name: sdd-archive
 description: Close a completed change and persist its final state. Use when verification has passed and the change is done — writes the archive report and marks the change as complete in the persistence backend. use PROACTIVELY when the user asks to archive or close a change.
 tools:
   - read_file
-  - read_many_files
   - write_file
+  - edit
+  - read_many_files
   - mcp__engram__mem_save
   - mcp__engram__mem_search
   - mcp__engram__mem_get_observation

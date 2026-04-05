@@ -3,8 +3,9 @@ name: sdd-propose
 description: Generate an architectural proposal for a change. Use after exploration when a concrete direction is needed — produces a clear proposal with rationale, tradeoffs, and affected areas. use PROACTIVELY when the user asks to propose a solution or approach.
 tools:
   - read_file
-  - read_many_files
   - write_file
+  - edit
+  - read_many_files
   - mcp__engram__mem_save
   - mcp__engram__mem_search
   - mcp__engram__mem_get_observation

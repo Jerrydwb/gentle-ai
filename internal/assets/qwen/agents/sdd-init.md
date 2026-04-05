@@ -4,6 +4,7 @@ description: Initialize Spec-Driven Development context in a project. Use when t
 tools:
   - read_file
   - write_file
+  - edit
   - read_many_files
   - run_shell_command
   - mcp__engram__mem_save

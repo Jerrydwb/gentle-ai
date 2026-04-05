@@ -3,8 +3,9 @@ name: sdd-spec
 description: Write a formal specification for a change. Use after a proposal exists to turn it into acceptance criteria, scenarios, and interface contracts. use PROACTIVELY when the user asks to write specs or acceptance criteria.
 tools:
   - read_file
-  - read_many_files
   - write_file
+  - edit
+  - read_many_files
   - mcp__engram__mem_save
   - mcp__engram__mem_search
   - mcp__engram__mem_get_observation

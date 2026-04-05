@@ -3,8 +3,9 @@ name: sdd-design
 description: Produce a technical design for a change. Use after a proposal exists to define the implementation structure — modules, data models, sequence diagrams, and decision rationale. use PROACTIVELY when the user asks for a technical design or architecture document.
 tools:
   - read_file
-  - read_many_files
   - write_file
+  - edit
+  - read_many_files
   - mcp__engram__mem_save
   - mcp__engram__mem_search
   - mcp__engram__mem_get_observation

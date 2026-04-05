@@ -34,6 +34,7 @@ func TestAllEmbeddedAssetsAreReadable(t *testing.T) {
 		"gemini/sdd-orchestrator.md",
 
 		// Qwen Code agent files
+		"qwen/persona-gentleman.md",
 		"qwen/sdd-orchestrator.md",
 		"qwen/agents/sdd-init.md",
 		"qwen/agents/sdd-explore.md",
@@ -45,6 +46,15 @@ func TestAllEmbeddedAssetsAreReadable(t *testing.T) {
 		"qwen/agents/sdd-verify.md",
 		"qwen/agents/sdd-archive.md",
 		"qwen/agents/sdd-onboard.md",
+		"qwen/commands/sdd-init.md",
+		"qwen/commands/sdd-explore.md",
+		"qwen/commands/sdd-new.md",
+		"qwen/commands/sdd-ff.md",
+		"qwen/commands/sdd-continue.md",
+		"qwen/commands/sdd-apply.md",
+		"qwen/commands/sdd-verify.md",
+		"qwen/commands/sdd-archive.md",
+		"qwen/commands/sdd-onboard.md",
 
 		// Codex agent files
 		"codex/sdd-orchestrator.md",

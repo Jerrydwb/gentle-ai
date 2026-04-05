@@ -9,6 +9,7 @@ Follow the SDD orchestrator workflow to fast-forward all planning phases for cha
 
 WORKFLOW:
 Run these agents in sequence:
+
 1. **sdd-propose** — create the proposal
 2. **sdd-spec** — write specifications
 3. **sdd-design** — create technical design

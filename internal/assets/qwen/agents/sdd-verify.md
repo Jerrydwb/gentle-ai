@@ -6,9 +6,11 @@ tools:
   - read_many_files
   - run_shell_command
   - web_search
-modelConfig:
-  model: qwen3-coder-plus
-  temperature: 0.2
+  - mem_save
+  - mem_search
+  - mem_get_observation
+  - mem_context
+  - mem_session_summary
 runConfig:
   max_turns: 20
   max_time_minutes: 15

@@ -177,4 +177,16 @@ func TestConfigPathsCrossPlatform(t *testing.T) {
 	if got := a.EmbeddedSubAgentsDir(); got != "qwen/agents" {
 		t.Fatalf("EmbeddedSubAgentsDir() = %q, want %q", got, "qwen/agents")
 	}
+
+	if got := a.CommandsDir(home); got != filepath.Join(home, ".qwen", "commands") {
+		t.Fatalf("CommandsDir() = %q, want %q", got, filepath.Join(home, ".qwen", "commands"))
+	}
+
+	if got := a.EmbeddedCommandsDir(); got != "qwen/commands" {
+		t.Fatalf("EmbeddedCommandsDir() = %q, want %q", got, "qwen/commands")
+	}
+
+	if !a.SupportsSlashCommands() {
+		t.Fatal("SupportsSlashCommands() = false, want true")
+	}
 }

@@ -5,6 +5,7 @@ description: Guided end-to-end walkthrough of SDD using your real codebase
 You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-onboard/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
+
 - Working directory: !{pwd}
 - Current project: !{basename $(pwd)}
 - Artifact store mode: engram
@@ -14,7 +15,7 @@ Guide the user through a complete SDD cycle using their actual codebase. This is
 
 ENGRAM PERSISTENCE (artifact store mode: engram):
 Save onboarding progress as you go:
-    mem_save(title: "sdd-onboard/{project}", topic_key: "sdd-onboard/{project}", type: "architecture", project: "{project}", content: "{onboarding state}")
+mem_save(title: "sdd-onboard/{project}", topic_key: "sdd-onboard/{project}", type: "architecture", project: "{project}", content: "{onboarding state}")
 topic_key enables upserts — re-running updates, not duplicates.
 
 Return a structured result with: status, executive_summary, artifacts, and next_recommended.

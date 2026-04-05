@@ -5,6 +5,7 @@ description: Explore and investigate an idea or feature — reads codebase and c
 You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-explore/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
+
 - Working directory: !{pwd}
 - Current project: !{basename $(pwd)}
 - Topic to explore: {{args}}
@@ -15,9 +16,9 @@ Explore the topic "{{args}}" in this codebase. Investigate the current state, id
 
 ENGRAM PERSISTENCE (artifact store mode: engram):
 Read project context (optional):
-    mem_search(query: "sdd-init/{project}", project: "{project}") → if found, mem_get_observation(id) for full content
+mem_search(query: "sdd-init/{project}", project: "{project}") → if found, mem_get_observation(id) for full content
 Save exploration:
-    mem_save(title: "sdd/{{args}}/explore", topic_key: "sdd/{{args}}/explore", type: "architecture", project: "{project}", content: "{exploration}")
+mem_save(title: "sdd/{{args}}/explore", topic_key: "sdd/{{args}}/explore", type: "architecture", project: "{project}", content: "{exploration}")
 
 This is an exploration only — do NOT create any files or modify code. Just research and return your analysis.
 

@@ -43,9 +43,9 @@ Clean/Hexagonal/Screaming Architecture, testing, atomic design, container-presen
 
 When you detect any of these contexts, IMMEDIATELY load the corresponding skill BEFORE writing any code.
 
-| Context | Skill to load |
-| ------- | ------------- |
-| Go tests, Bubbletea TUI testing | go-testing |
-| Creating new AI skills | skill-creator |
+| Context                         | Skill to load |
+| ------------------------------- | ------------- |
+| Go tests, Bubbletea TUI testing | go-testing    |
+| Creating new AI skills          | skill-creator |
 
 Load skills from ~/.qwen/skills/{skill-name}/SKILL.md BEFORE writing code. Apply ALL patterns. Multiple skills can apply simultaneously.

@@ -57,6 +57,16 @@ type workflowInjector interface {
 	EmbeddedWorkflowsDir() string
 }
 
+// commandInjector is an optional adapter capability: if an adapter
+// implements this interface and SupportsSlashCommands() is true,
+// sdd.Inject will read the embedded command files from the adapter-specific
+// directory instead of defaulting to "opencode/commands".
+// This intentionally does NOT extend agents.Adapter to avoid requiring all
+// adapters to implement no-op stubs.
+type commandInjector interface {
+	EmbeddedCommandsDir() string
+}
+
 // subAgentInjector is an optional adapter capability: if an adapter
 // implements this interface, sdd.Inject will copy the embedded sub-agent
 // markdown files into the user's home directory (e.g. ~/.cursor/agents/).
@@ -250,9 +260,16 @@ func Inject(homeDir string, adapter agents.Adapter, sddMode model.SDDModeID, opt
 	if adapter.SupportsSlashCommands() {
 		commandsDir := adapter.CommandsDir(homeDir)
 		if commandsDir != "" {
-			commandEntries, err := fs.ReadDir(assets.FS, "opencode/commands")
+			embeddedCommandsDir := "opencode/commands"
+			if ci, ok := adapter.(commandInjector); ok {
+				if d := ci.EmbeddedCommandsDir(); d != "" {
+					embeddedCommandsDir = d
+				}
+			}
+
+			commandEntries, err := fs.ReadDir(assets.FS, embeddedCommandsDir)
 			if err != nil {
-				return InjectionResult{}, fmt.Errorf("read embedded opencode/commands: %w", err)
+				return InjectionResult{}, fmt.Errorf("read embedded %s: %w", embeddedCommandsDir, err)
 			}
 
 			for _, entry := range commandEntries {
@@ -260,7 +277,7 @@ func Inject(homeDir string, adapter agents.Adapter, sddMode model.SDDModeID, opt
 					continue
 				}
 
-				content := assets.MustRead("opencode/commands/" + entry.Name())
+				content := assets.MustRead(embeddedCommandsDir + "/" + entry.Name())
 				path := filepath.Join(commandsDir, entry.Name())
 				writeResult, err := filemerge.WriteFileAtomic(path, []byte(content), 0o644)
 				if err != nil {

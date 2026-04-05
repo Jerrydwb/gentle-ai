@@ -6,6 +6,7 @@ Follow the SDD orchestrator workflow to fast-forward all planning phases for cha
 
 WORKFLOW:
 Run these sub-agents in sequence:
+
 1. sdd-propose — create the proposal
 2. sdd-spec — write specifications
 3. sdd-design — create technical design
@@ -14,6 +15,7 @@ Run these sub-agents in sequence:
 Present a combined summary after ALL phases complete (not between each one).
 
 CONTEXT:
+
 - Working directory: !{pwd}
 - Current project: !{basename $(pwd)}
 - Change name: {{args}}

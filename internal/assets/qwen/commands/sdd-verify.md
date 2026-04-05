@@ -5,6 +5,7 @@ description: Validate implementation against specs — reports CRITICAL / WARNIN
 You are an SDD sub-agent. Read the skill file at ~/.qwen/skills/sdd-verify/SKILL.md FIRST, then follow its instructions exactly.
 
 CONTEXT:
+
 - Working directory: !{pwd}
 - Current project: !{basename $(pwd)}
 - Artifact store mode: engram
@@ -15,17 +16,18 @@ Verify the active SDD change. Read the proposal, specs, design, and tasks artifa
 ENGRAM PERSISTENCE (artifact store mode: engram):
 CRITICAL: mem_search returns 300-char PREVIEWS, not full content. You MUST call mem_get_observation(id) for EVERY artifact.
 STEP A — SEARCH (get IDs only):
-    mem_search(query: "sdd/{change-name}/spec", project: "{project}") → save spec_id
-    mem_search(query: "sdd/{change-name}/design", project: "{project}") → save design_id
-    mem_search(query: "sdd/{change-name}/tasks", project: "{project}") → save tasks_id
+mem_search(query: "sdd/{change-name}/spec", project: "{project}") → save spec_id
+mem_search(query: "sdd/{change-name}/design", project: "{project}") → save design_id
+mem_search(query: "sdd/{change-name}/tasks", project: "{project}") → save tasks_id
 STEP B — RETRIEVE FULL CONTENT (mandatory):
-    mem_get_observation(id: spec_id) → full spec
-    mem_get_observation(id: design_id) → full design
-    mem_get_observation(id: tasks_id) → full tasks
+mem_get_observation(id: spec_id) → full spec
+mem_get_observation(id: design_id) → full design
+mem_get_observation(id: tasks_id) → full tasks
 Save report:
-    mem_save(title: "sdd/{change-name}/verify-report", topic_key: "sdd/{change-name}/verify-report", type: "architecture", project: "{project}", content: "{verification report}")
+mem_save(title: "sdd/{change-name}/verify-report", topic_key: "sdd/{change-name}/verify-report", type: "architecture", project: "{project}", content: "{verification report}")
 
 Then:
+
 1. Check completeness — are all tasks done?
 2. Check correctness — does code match specs?
 3. Check coherence — were design decisions followed?
